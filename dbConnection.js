@@ -13,13 +13,19 @@
 
 
 
-import { MongoClient } from 'mongodb'
+import { MongoClient } from "mongodb"
 
-const dbConnectionUrl = 'mongodb://127.0.0.1:27017'
-const client = new MongoClient(dbConnectionUrl)
+const uri = "mongodb://127.0.0.1:27017"; // Change port to 27017
+
+const client = new MongoClient(uri);
 
 export const dbConnection = async () => {
-    await client.connect()
-    const db = client.db('mongoDBProject_Database')
-    return db
+    try {
+        await client.connect();
+        console.log("Connected to MongoDB!");
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+    }
+
 }
+

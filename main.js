@@ -11,11 +11,31 @@ app.get('/student-read', (req, res) => {
 
 app.post('/student-insert', async (req, res) => {
     // const myDb = await dbConnection()
-    // const studentCollection = myDb.collection("student")
-    res.status(200).json({
-        bodyData : req.body
-    })
+    const myDb = await dbConnection()
+    const studentCollection = myDb.collection("student")
+
+    const { fullName, email } = req.body
+
+    const obj = {
+        fullName,
+        email
+    }
+
+    const insertRes = await studentCollection.insertOne(obj)
+    res.send(insertRes)
 })
+
+// app.post('/student-insert', async (req, res) => {
+//     const myDb = await dbConnection()
+//     const studentCollection = myDb.collection("student")
+
+//     const {fullName,email} = req.body
+//     const insertRes = await studentCollection.insertOne()
+
+//     res.status(200).json({
+//         bodyData : req.body
+//     })
+// })
 
 app.listen(port, () => {
     console.log('Exprees app run on port 3000!')
