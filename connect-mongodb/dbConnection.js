@@ -1,7 +1,7 @@
 
 import { MongoClient } from "mongodb"
 
-const dbConnectionUri = 'mongodb+srv://haseeburrehmanjs:haseeburrehmanjs@cluster0.7euhc.mongodb.net/' 
+const dbConnectionUri = process.env.URI 
 const client = new MongoClient(dbConnectionUri)
 
 export const dbConnection = async () => {
