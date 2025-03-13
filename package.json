@@ -1,0 +1,25 @@
+{
+  "name": "learn-no-sql-database",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haseeburrehmanjs/Learn-no-SQL-Database.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/haseeburrehmanjs/Learn-no-SQL-Database/issues"
+  },
+  "homepage": "https://github.com/haseeburrehmanjs/Learn-no-SQL-Database#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.14.2"
+  }
+}
